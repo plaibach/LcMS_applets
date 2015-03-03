@@ -4,7 +4,7 @@
 <html>
 <head>
 <link rel="stylesheet" type="text/css" href="machinetype.css">
-<title>Desktop Device Lookup v1.0</title>
+<title>LcMS Device Lookup v1.0</title>
 
 </head>
 
@@ -12,7 +12,7 @@
 
 
 <p>
-Desktop Device Lookup v1.0<br>
+LcMS Device Lookup v1.0<br>
 Furry search of Desktop_Name, Marketing_Name, and Machine_Type
 
 <form name="lookupForm" action="machinetype.php" method ="POST">
