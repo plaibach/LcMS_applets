@@ -13,15 +13,15 @@
 
 <p>
 LcMS Device Lookup v1.0<br>
-Furry search of Desktop_Name, Marketing_Name, and Machine_Type
+Furry search of Machine_Type, Marketing_Name, and Desktop_Name
 
 <form name="lookupForm" action="machinetype.php" method ="POST">
 
 
 <input type="text" autofocus placeholder="gimme something" onFocus="this.select()" name="model" value="<?php if (isset($_POST['model'])) echo $_POST['model']; ?>">
 
-<p><input type="submit" class="submit"></p> 
-		
+<p><input type="submit" class="submit"></p>
+
 		</form>
 </p>
 <p>
@@ -38,16 +38,16 @@ require( 'includes/machineHelpers.php' ) ;
 
 		new_machine_search($dbc, $model);
 		}
-	else if($_SERVER[ 'REQUEST_METHOD' ] == 'GET') 
+	else if($_SERVER[ 'REQUEST_METHOD' ] == 'GET')
 {
 	if(isset($_GET['model']))
 	{
-find_record_machine($dbc, $_GET['model']) ;	
-	}	
+find_record_machine($dbc, $_GET['model']) ;
+	}
 }
 
 mysqli_close( $dbc ) ;
 ?>
-</p>		
+</p>
 </body>
 </html>
