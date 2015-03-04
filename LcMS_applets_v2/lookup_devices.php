@@ -2,24 +2,31 @@
 <html>
 
 <!-- Life-cycle Management Applet Collection
-     Paul Laibach - Project Lead
-     Connor Hayes - Testing & Development
+     Paul Laibach - LcMS Concept and Implementation
+     Connor Hayes - Applet Development and Testing
 -->
 
 <head>
-   <title>LcMS Device Lookup v2.0</title>
+
+   <title>LcMS Device Lookup v1.3</title>
    <link rel="stylesheet" type="text/css" href="lookup_applets.css">
+
 </head>
 
 <body>
 
    <h3>
       Life-cycle Management System<br>
-      -- Device Lookup v2.0 --
+      -- Device Lookup v1.3 --
    </h3>
 
+   <form name="lookupForm" action="machinetype.php" method ="POST">
+      <input type="text" autofocus placeholder="gimme something" onFocus="this.select()" name="model" value="<?php if (isset($_POST['model'])) echo $_POST['model']; ?>"><br><br>
+      <input type="submit" class="submit">
+   </form>
+
    <h4>
-      Furry search of LcMS Devices Table
+      Furry search of LcMS devices
    </h4>
 
    <div class="wrapper">

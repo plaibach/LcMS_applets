@@ -7,6 +7,14 @@ h4 {
    font-style: italic;
 }
 
+form {
+   text-align: center;
+}
+
+input {
+   text-align: center;
+}
+
 /*
    Credit for greenbar formatting that follows...
    http://www.pamgriffith.net/blog/nostagia-in-css
