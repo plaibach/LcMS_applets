@@ -20,7 +20,7 @@
       -- Device Lookup v1.3 --
    </h3>
 
-   <form name="lookupForm" action="machinetype.php" method ="POST">
+   <form name="lookupForm" action="lookup_devices.php" method ="POST">
       <input type="text" autofocus placeholder="gimme something" onFocus="this.select()" name="model" value="<?php if (isset($_POST['model'])) echo $_POST['model']; ?>"><br><br>
       <input type="submit" class="submit">
    </form>
