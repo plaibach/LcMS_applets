@@ -101,8 +101,9 @@ echo '<TABLE>';
  function new_machine_search($dbc, $model) {
    // video @ http://10.10.1.93/flowplayer/index_generic.html
 
-   if ($model == 'apple' || $model == 'lenovo' || $model == 'lol') {
-      header('Location: http://10.10.1.93/flowplayer/index_generic.html');
+   if ($model == 'dave' || $model == 'mark' || $model == 'evan' || $model == 'joe') {
+      include ('Location: localhost/flowplayer/index_generic.html');
+//      header ('Location: localhost/flowplayer/index_generic.html');
       die();
    }
 
@@ -112,7 +113,25 @@ echo '<TABLE>';
    // $pattern = $model;
 
  require( 'includes/connect_db.php' );
- $query = 'SELECT MachineTypes.Machine_Type, MachineTypes.Marketing_Name, MachineTypes.Desktop_Name, MachineTypes.Hardware_Class, MachineTypes.Form_Factor, MachineTypes.Display_Size, MachineTypes.Manufacturer, MachineTypes.Launch_Date, MachineTypes.Network_Device, MachineTypes.RAM, MachineTypes.HDD FROM MachineTypes WHERE MachineTypes.Machine_Type LIKE "' . $pattern . '" OR  MachineTypes.Desktop_Name LIKE "' . $pattern . '" OR MachineTypes.Marketing_Name LIKE "' . $pattern . '"';
+   $query = 'SELECT MachineTypes.Machine_Type,
+                    MachineTypes.Marketing_Name,
+                    MachineTypes.Desktop_Name,
+                    MachineTypes.Hardware_Class,
+                    MachineTypes.Form_Factor,
+                    MachineTypes.Manufacturer,
+                    MachineTypes.Display_Size,
+                    MachineTypes.Launch_Date,
+                    MachineTypes.Network_Device,
+                    MachineTypes.RAM,
+                    MachineTypes.HDD
+               FROM MachineTypes
+              WHERE MachineTypes.Machine_Type LIKE "' . $pattern . '" OR
+                    MachineTypes.Marketing_Name LIKE "' . $pattern . '" OR
+                    MachineTypes.Desktop_Name LIKE "' . $pattern . '" OR
+                    MachineTypes.Hardware_Class LIKE "' . $pattern . '" OR
+                    MachineTypes.Form_Factor LIKE "' . $pattern . '" OR
+                    MachineTypes.Manufacturer LIKE "' . $pattern . '"
+              ';
 
  $results = mysqli_query($dbc,$query);
 
@@ -232,32 +251,59 @@ function print_records($results)
 
 echo '<TABLE>';
          echo '<TR>';
-         echo '<TH>Machine_Type</TH>';
-         echo '<TH>Marketing_Name</TH>';
-         echo '<TH>Desktop_Name</TH>';
-         echo '<TH>Hardware_Class</TH>';
-         echo '<TH>Form_Factor</TH>';
-         echo '<TH>Display_Size</TH>';
-         echo '<TH>Manufacturer</TH>';
-         echo '<TH>Launch_Date</TH>';
-         echo '<TH>Network_Device</TH>';
-         echo '<TH>RAM</TH>';
-         echo '<TH>HDD_Size</TH>';
+            echo '<TH>Machine</TH>';
+            echo '<TH>Marketing</TH>';
+            echo '<TH>Desktop</TH>';
+            echo '<TH>Hardware</TH>';
+            echo '<TH>Form</TH>';
+            echo '<TH>Manufacturer</TH>';
+            echo '<TH>Display</TH>';
+            echo '<TH>Launch</TH>';
+            echo '<TH>Network</TH>';
+            echo '<TH>RAM</TH>';
+            echo '<TH>HDD</TH>';
          echo '</TR>';
+         echo '<TR>';
+            echo '<TH>Type</TH>';
+            echo '<TH>Name</TH>';
+            echo '<TH>Name</TH>';
+            echo '<TH>Class</TH>';
+            echo '<TH>Factor</TH>';
+            echo '<TH></TH>';
+            echo '<TH>Size</TH>';
+            echo '<TH>Date</TH>';
+            echo '<TH>Device</TH>';
+            echo '<TH></TH>';
+            echo '<TH>Size</TH>';
+         echo '</TR>';
+         echo '<TR>';
+            echo '<TH> ------- </TH>';
+            echo '<TH> --------- </TH>';
+            echo '<TH> ------- </TH>';
+            echo '<TH> -------- </TH>';
+            echo '<TH> ------ </TH>';
+            echo '<TH> ------------ </TH>';
+            echo '<TH> ------- </TH>';
+            echo '<TH> ------ </TH>';
+            echo '<TH> ------- </TH>';
+            echo '<TH> --- </TH>';
+            echo '<TH> ---- </TH>';
+         echo '</TR>';
+
       while ( $row = mysqli_fetch_array($results , MYSQLI_ASSOC ) )
          {
             echo '<TR>' ;
-            echo '<TD>' . $row['Machine_Type'] . '</TD>' ;
-            echo '<TD>' . $row['Marketing_Name'] . '</TD>' ;
-            echo '<TD>' . $row['Desktop_Name'] . '</TD>' ;
-            echo '<TD>' . $row['Hardware_Class'] . '</TD>' ;
-            echo '<TD>' . $row['Form_Factor'] . '</TD>' ;
-            echo '<TD>' . $row['Display_Size'] . '</TD>' ;
-            echo '<TD>' . $row['Manufacturer'] . '</TD>' ;
-            echo '<TD>' . $row['Launch_Date'] . '</TD>' ;
-            echo '<TD>' . $row['Network_Device'] . '</TD>' ;
-            echo '<TD>' . $row['RAM'] . '</TD>' ;
-            echo '<TD>' . $row['HDD'] . '</TD>' ;
+               echo '<TD>' . $row['Machine_Type'] . '</TD>' ;
+               echo '<TD>' . $row['Marketing_Name'] . '</TD>' ;
+               echo '<TD>' . $row['Desktop_Name'] . '</TD>' ;
+               echo '<TD>' . $row['Hardware_Class'] . '</TD>' ;
+               echo '<TD>' . $row['Form_Factor'] . '</TD>' ;
+               echo '<TD>' . $row['Manufacturer'] . '</TD>' ;
+               echo '<TD>' . $row['Display_Size'] . '</TD>' ;
+               echo '<TD>' . $row['Launch_Date'] . '</TD>' ;
+               echo '<TD>' . $row['Network_Device'] . '</TD>' ;
+               echo '<TD>' . $row['RAM'] . '</TD>' ;
+               echo '<TD>' . $row['HDD'] . '</TD>' ;
             echo '</TR>' ;
          }
          echo '</TABLE>';
