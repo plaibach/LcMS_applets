@@ -14,7 +14,7 @@
 </head>
 
 <body>
-
+<script type="text/javascript" src="flowplayer-3.1.4.min.js"></script>
    <h3>
       Life-cycle Management System<br>
       -- Device Lookup v1.3 --
