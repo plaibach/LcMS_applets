@@ -102,9 +102,14 @@ echo '<TABLE>';
    // video @ http://10.10.1.93/flowplayer/index_generic.html
 
    if ($model == 'dave' || $model == 'mark' || $model == 'evan' || $model == 'joe') {
-      include ('Location: localhost/flowplayer/index_generic.html');
-//      header ('Location: localhost/flowplayer/index_generic.html');
-      die();
+      echo' <a class="myPlayer" href="rickroll.flv"><object width="100%" height="100%" id="fp_30239437_api" data="flowplayer-3.1.5.swf" type="application/x-shockwave-flash">';
+      echo' <param name="allowfullscreen" value="true">';
+      echo' <param name="allowscriptaccess" value="always">';
+      echo' <param name="quality" value="high">';
+      echo' <param name="cachebusting" value="false">';
+      echo' <param name="bgcolor" value="#000000">';
+      echo' <param name="flashvars" value="config={&quot;clip&quot;:{&quot;autoPlay&quot;:true,&quot;autoBuffering&quot;:true,&quot;url&quot;:&quot;rickroll.flv&quot;},&quot;playerId&quot;:&quot;fp_30239437&quot;,&quot;playlist&quot;:[{&quot;autoPlay&quot;:true,&quot;autoBuffering&quot;:true,&quot;url&quot;:&quot;rickroll.flv&quot;}]}"></object></a>';
+     
    }
 
    //$pattern appends wild card to $model parameter
